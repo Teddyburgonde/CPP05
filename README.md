@@ -7,7 +7,7 @@ class Bureaucrat
 private :
 	std::string const _name;
 	int grade;
-
+- grade valid ? de 1 a 150.
 **Les exceptions**
 
 - Une exception en programmation est un mécanisme qui permet de gérer les erreurs ou les situations inattendues de manière propre et contrôlée.
@@ -27,7 +27,8 @@ public:
         return "Grade is too high!";
     }
 };
-what throw
+- noexcept signifie que la fonction ne levera pas d'exception supplémentaire.
+
 
 
 
