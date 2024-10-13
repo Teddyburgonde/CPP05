@@ -1,0 +1,19 @@
+Maintenant que vous avez des bureaucrates, donnons-leur quelque chose à faire. Quelle meilleure activité pourrait-il y avoir que celle de remplir une pile de formulaires ?
+
+Créons donc une classe Formulaire (Form). Elle doit avoir :
+
+    Un nom constant.
+    Un booléen indiquant si le formulaire est signé (à la construction, il ne l'est pas).
+    Un grade constant requis pour le signer.
+    Et un grade constant requis pour l'exécuter.
+
+Tous ces attributs sont privés, pas protégés. Les grades du formulaire suivent les mêmes règles que celles qui s'appliquent au Bureaucrate (Bureaucrat). Ainsi, les exceptions suivantes seront lancées si un grade du formulaire est hors limites : Form::GradeTooHighException et Form::GradeTooLowException. Comme auparavant, écrivez des getters pour tous les attributs et une surcharge de l’opérateur d’insertion («) qui affiche toutes les informations du formulaire.
+
+Ajoutez également une fonction membre beSigned() à la classe Form qui prend un Bureaucrat comme paramètre. Elle change le statut du formulaire à "signé" si le grade du bureaucrate est suffisamment élevé (supérieur ou égal à celui requis). Rappelez-vous, le grade 1 est supérieur au grade 2. Si le grade est trop bas, lancez une exception Form::GradeTooLowException.
+
+Enfin, ajoutez une fonction membre signForm() à la classe Bureaucrat. Si le formulaire a été signé, elle affichera quelque chose comme :
+<bureaucrat> a signé <form>.
+Sinon, elle affichera quelque chose comme :
+<bureaucrat> n’a pas pu signer <form> parce que <raison>.
+
+Implémentez et soumettez des tests pour garantir que tout fonctionne comme prévu.
