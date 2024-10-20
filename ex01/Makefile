@@ -13,6 +13,7 @@ CFLAGS = -Wall -Wextra -Werror -g -std=c++98
 #================== SOURCES =================#
 
 SRCS = Bureaucrat.cpp \
+		Form.cpp \
 	   main.cpp
 
 #============== OBJECT FILES ================#

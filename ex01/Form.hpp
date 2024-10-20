@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 15:25:51 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/20 10:54:16 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/10/20 16:43:43 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,16 @@ class Form
         bool getIsSigned() const;
         int getGradeToExecute() const;
         int getGradeToSign() const;
-        bool beSigned(Bureaucrat bureaucrat);
+        void beSigned(const Bureaucrat & bureaucrat);
 
     private:
         std::string const _name;
         bool _signed;
-        const int _gradeToExecute; // grade requis pour executer
-        const int _gradeToSign; // grade requis pour signer
+        const int _gradeToExecute;
+        const int _gradeToSign;
 
 };
 
 std::ostream &operator<<(std::ostream &os, const Form &form);
-
 
 #endif
