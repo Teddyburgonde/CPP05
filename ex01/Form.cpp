@@ -6,38 +6,44 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 15:25:44 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/13 18:27:26 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/10/20 10:02:41 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(std::string const name, bool isSigned, int gradeToExecute, int gradeToSign) : _name(name), _signed(isSigned), _gradeToExecute(gradeToExecute), _gradeToSign(gradeToSign)
+Form::Form(std::string const name, bool isSigned, int gradeToExecute, int gradeToSign) : _name(name), _signed(false), _gradeToExecute(gradeToExecute), _gradeToSign(gradeToSign)
 {
-    if (grade < 1)
+    if (gradeToSign < 1 || gradeToExecute < 1)
         throw GradeTooHighException();
-    if (grade > 150)
+    if (gradeToSign > 150 || gradeToExecute > 150)
         throw GradeTooLowException();     
 }
-std::string const &getName() const
+std::string const & Form::getName() const
 {
     return (_name);
 }
 
-void Form::incrementGrade(void)
+bool Form::getIsSigned() const
 {
-    if (_grade <= 1)
-    {
-        throw GradeTooHighException();
-    }
-    --_grade;
+    return (_signed);
 }
 
-void Form::decrementGrade(void)
+int Form::getGradeToExecute() const
 {
-    if (_grade >= 150)
-    {
-        throw  GradeTooLowException();
-    }
-    ++_grade;
+    return (_gradeToExecute);        
+}
+
+int Form::getGradeToSign() const
+{
+    return (_gradeToSign);
+}
+
+const char* Form::GradeTooHighException::what() const throw()
+{
+	return ("Grade is too high");
+}
+const char* Form::GradeTooLowException::what() const throw()
+{
+	return ("Grade is too low");
 }
