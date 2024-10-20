@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 15:25:51 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/20 09:59:36 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/10/20 10:54:16 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FORM_HPP
 
 #include <iostream>
-#include <string>
+#include "Bureaucrat.hpp"
 
 class Form
 {
@@ -37,7 +37,8 @@ class Form
         bool getIsSigned() const;
         int getGradeToExecute() const;
         int getGradeToSign() const;
-        
+        bool beSigned(Bureaucrat bureaucrat);
+
     private:
         std::string const _name;
         bool _signed;
