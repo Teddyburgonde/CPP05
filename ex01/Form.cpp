@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 15:25:44 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/21 09:10:06 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/10/21 19:04:08 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,8 @@ const char* Form::GradeTooLowException::what() const throw()
 
 std::ostream & operator<<(std::ostream &os, const Form &form)
 {
-	os << form.getName() << " is ???"
-	<< ", grade to execute: " << form.getGradeToExecute()
-	<< ". grade to sign: " << form.getGradeToSign()
-	<< std::endl;
+	os << "The contract " << form.getName() << " , signed: " << form.getIsSigned() << ", " << std::endl
+	<< "to execute this contract you have to be a grade " << form.getGradeToExecute() << std::endl
+    << "and to sign it you have to be a grade " << form.getGradeToSign() << "." << std::endl;
 	return (os);
 }

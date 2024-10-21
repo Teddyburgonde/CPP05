@@ -5,20 +5,40 @@
 int	main()
 {
 	/* Create a form with grade too high */
+	// {
+	// 	try // surveille le code qui pourrait potentiellement generer des exceptions
+	// 	{
+	// 		Form form("A55", 10, 151); // creation d'un formulaire
+	// 		std::cout << f ;// imprime les valeurs de l'objet 
+	// 	}
+	// 	catch(std::exception &e) // permet de capturer l'exception 
+	// 	{
+	// 		std::cerr << e.what() << std::endl; // what est une methode de std::exception
+	// 	}
+	// }
+	std::cout << "------------------------------" << std::endl;
 	{
-		try // surveille le code qui pourrait potentiellement generer des exceptions
+		try 
 		{
-			Form f("Document A", 10, 1); // creation d'un formulaire
-			
-			std::cout << f.getGradeToExecute() << std::endl;
-			std::cout << f.getGradeToSign() << std::endl;
-			std::cout << f << std::endl; // imprime les valeurs de l'objet 
-		}
-		catch(std::exception &e) // permet de capturer l'exception 
+			Bureaucrat Manutea("Manutea", 10);
+			std::cout << bureaucrat << std::endl;
+			Form form("B12", 9, 151);
+			std::cout << form << std::endl;
+			Manutea.
+		} 
+		catch (std::exception &e) 
 		{
-			std::cerr << e.what() << std::endl; // what est une methode de std::exception
+			std::cerr << e.what() << std::endl;
 		}
 	}
+
+	// Creer un Bureaucrat , afficher son grade ✅ 
+	// Creer une formulaire ❌
+	// Mike successfully signed B58 ❌
+	// Mike signs B58 ❌
+	// Afficher le formulaire avec letat de signed qui a changer ❌
+
+
 }
 
 

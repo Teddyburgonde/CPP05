@@ -31,6 +31,13 @@ std::string const & Bureaucrat::getName() const
     return (_name);
 }
 
+// Create a function signForm 
+// try and catch
+// dans le try utiliser beSigned 
+
+
+
+
 int Bureaucrat::getGrade() const
 {
     return (_grade);
