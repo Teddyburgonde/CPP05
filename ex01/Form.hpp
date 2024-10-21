@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 15:25:51 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/20 16:43:43 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/10/21 09:05:12 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Form
                     virtual const char* what() const throw();
             };
     public:
-        Form(std::string name, bool isSigned, int gradeToExecute, int gradeToSign);
+        Form(std::string name, int gradeToExecute, int gradeToSign);
 
     public:
         std::string const &getName() const;

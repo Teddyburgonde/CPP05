@@ -6,13 +6,13 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 15:25:44 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/20 16:43:48 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/10/21 09:10:06 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(std::string const name, bool isSigned, int gradeToExecute, int gradeToSign) : _name(name), _signed(false), _gradeToExecute(gradeToExecute), _gradeToSign(gradeToSign)
+Form::Form(std::string const name , const int gradeToExecute, const int gradeToSign) : _name(name), _gradeToExecute(gradeToExecute), _gradeToSign(gradeToSign)
 {
     if (gradeToSign < 1 || gradeToExecute < 1)
         throw GradeTooHighException();
@@ -58,8 +58,9 @@ const char* Form::GradeTooLowException::what() const throw()
 
 std::ostream & operator<<(std::ostream &os, const Form &form)
 {
-	os << form.getName() << " is " << (form.getIsSigned() ? "signed" : "not signed")
-	<< ". grade to sign: " << form.getGradeToSign() 
-	<< ", grade to execute: " << form.getGradeToExecute() << std::endl;
+	os << form.getName() << " is ???"
+	<< ", grade to execute: " << form.getGradeToExecute()
+	<< ". grade to sign: " << form.getGradeToSign()
+	<< std::endl;
 	return (os);
 }
