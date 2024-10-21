@@ -1,15 +1,23 @@
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
+// std::string const name , const int gradeToExecute, const int gradeToSign
 int	main()
 {
-	try // surveille le code qui pourrait potentiellement generer des exceptions
+	/* Create a form with grade too high */
 	{
-		Form f("Document A", 10, 1); // creation d'un formulaire
-		std::cout << f << std::endl; // imprime les valeurs de l'objet 
-	} 
-	catch(std::exception &e) // permet de capturer l'exception 
-	{
-		std::cerr << e.what() << std::endl; // what est une methode de std::exception
+		try // surveille le code qui pourrait potentiellement generer des exceptions
+		{
+			Form f("Document A", 10, 1); // creation d'un formulaire
+			
+			std::cout << f.getGradeToExecute() << std::endl;
+			std::cout << f.getGradeToSign() << std::endl;
+			std::cout << f << std::endl; // imprime les valeurs de l'objet 
+		}
+		catch(std::exception &e) // permet de capturer l'exception 
+		{
+			std::cerr << e.what() << std::endl; // what est une methode de std::exception
+		}
 	}
 }
 
