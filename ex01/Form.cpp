@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 15:25:44 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/22 08:41:24 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/10/22 11:01:00 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,15 @@ int Form::getGradeToSign() const
     return (_gradeToSign);
 }
 
+// gerer le cas si le formulaire est deja signer , ne pas refaire signer 
 void Form::beSigned(const Bureaucrat& bureaucrat)
 {
-    if (bureaucrat.getGrade() >= _gradeToSign)
+    if (bureaucrat.getGrade() <= _gradeToSign)
         _signed = true;
     else
+    {
         throw GradeTooLowException();
+    }
 }
 
 const char* Form::GradeTooHighException::what() const throw()
@@ -58,8 +61,13 @@ const char* Form::GradeTooLowException::what() const throw()
 
 std::ostream & operator<<(std::ostream &os, const Form &form)
 {
-	os << "The contract " << form.getName() << " , signed: " << form.getIsSigned() << ", " << std::endl
-	<< "to execute this contract you have to be a grade " << form.getGradeToExecute() << std::endl
+	os << "The contract " << form.getName();
+    if (form.getIsSigned() == true)
+        os << " is signed." << std::endl;
+    else {
+        os << " is not signed." << std::endl;
+    }
+	os << "To execute this contract you have to be a grade " << form.getGradeToExecute() << std::endl
     << "and to sign it you have to be a grade " << form.getGradeToSign() << "." << std::endl;
 	return (os);
 }

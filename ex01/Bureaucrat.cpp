@@ -25,8 +25,6 @@ void	Bureaucrat::signForm(Form &form)
     }
 }
 
-
-
 int Bureaucrat::getGrade() const
 {
     return (_grade);
@@ -44,7 +42,7 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat)
 {
-    os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << ".";
+    os << bureaucrat.getName() << ", is a bureaucrat grade " << bureaucrat.getGrade() << ".";
     return (os);
 }
 
