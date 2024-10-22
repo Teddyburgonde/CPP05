@@ -3,9 +3,14 @@
 
 #include <iostream>
 #include <exception>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
+	// les formes canoniques ???
+
 	public:
 		class GradeTooHighException : public std::exception
 		{
@@ -21,7 +26,7 @@ class Bureaucrat
 		Bureaucrat(std::string name, int grade);
         std::string const &getName() const;
         int getGrade() const;
-		// void	signForm(Form &form);
+		void	signForm(Form &form);
 	private:
     	std::string const   _name;
     	int _grade;

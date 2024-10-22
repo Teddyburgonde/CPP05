@@ -21,10 +21,10 @@ int	main()
 		try 
 		{
 			Bureaucrat Manutea("Manutea", 10);
-			std::cout << bureaucrat << std::endl;
+			std::cout << Manutea << std::endl;
 			Form form("B12", 9, 151);
-			std::cout << form << std::endl;
-			Manutea.
+			form.beSigned(Manutea);
+			std::cout << "Form signed successfully" << std::endl;
 		} 
 		catch (std::exception &e) 
 		{

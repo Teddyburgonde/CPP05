@@ -8,33 +8,22 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
         throw GradeTooLowException();
 } 
 
-void Bureaucrat::incrementGrade(void)
-{
-    if (_grade <= 1)
-    {
-        throw GradeTooHighException();
-    }
-    --_grade;
-}
-
-void Bureaucrat::decrementGrade(void)
-{
-    if (_grade >= 150)
-    {
-        throw  GradeTooLowException();
-    }
-    ++_grade;
-}
-
 std::string const & Bureaucrat::getName() const
 {
     return (_name);
 }
 
-// Create a function signForm 
-// try and catch
-// dans le try utiliser beSigned 
-
+void	Bureaucrat::signForm(Form &form)
+{
+    try 
+    {
+        form.beSigned(*this);
+        std::cout << this->_name << " signs " << form.getName() << std::endl;
+    } catch (std::exception &e) 
+    {
+        std::cout << this->_name << " cannot sign " << form.getName() << " because: " << e.what() << std::endl;
+    }
+}
 
 
 
