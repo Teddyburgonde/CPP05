@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:39:26 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/22 12:39:29 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/10/22 19:07:01 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,17 @@ class Form;
 
 class Bureaucrat
 {
-	// les formes canoniques ???
-
+	public :
+		Bureaucrat(std::string name, int grade);
+		~Bureaucrat();
+		Bureaucrat(Bureaucrat const &cpy);
+		Bureaucrat & operator=(Bureaucrat const &rhs);
+    
+	public:
+        std::string const &getName() const;
+        int getGrade() const;
+		void	signForm(Form &form);
+	
 	public:
 		class GradeTooHighException : public std::exception
 		{
@@ -34,14 +43,11 @@ class Bureaucrat
 			public:
 				virtual const char* what() const throw();
 		};
-    public:
-		Bureaucrat(std::string name, int grade);
-        std::string const &getName() const;
-        int getGrade() const;
-		void	signForm(Form &form);
+
 	private:
     	std::string const   _name;
     	int _grade;
+	
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat);
