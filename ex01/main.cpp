@@ -3,11 +3,10 @@
 
 int	main()
 {
-
-	/* A bureaucrat signing a form */
-
 	std::cout << "------------------------------" << std::endl;
 	std::cout << std::endl;
+
+	/* A bureaucrat signing a form */
 	{
 		try 
 		{
@@ -26,6 +25,7 @@ int	main()
 	}
 
 	std::cout << "------------------------------" << std::endl;
+	std::cout << std::endl;
 
 	/* A bureaucrat who can't sign the form */	
 	{
@@ -44,8 +44,49 @@ int	main()
 		}
 	}
 
+	std::cout << std::endl;
+	std::cout << "------------------------------" << std::endl;
+	std::cout << std::endl;
 
-	// si un bureaUcrate n'a pas le grade pour signer le form❌
+	/* A bureaucrat who wants to sign a document that is already signed */
+	{
+		try
+		{
+			Bureaucrat Adrien("Adrien", 20);
+			std::cout << Adrien << std::endl;
+			Form form("C99", 30, 30);
+			std::cout << form << std::endl;
+			form.beSigned(Adrien);
+			std::cout << form << std::endl;
+			std::cout << "test to re-sign" << std::endl;
+			form.beSigned(Adrien);
+		}
+		catch(std::exception &e)
+		{
+			 std::cerr << "Exception caught: " << e.what() << std::endl;
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	// si un bureaucrate veut signer un form deja signer ❌
 
 }
