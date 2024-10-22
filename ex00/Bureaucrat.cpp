@@ -1,5 +1,23 @@
 #include "Bureaucrat.hpp"
 
+Bureaucrat::~Bureaucrat()
+{
+    
+};
+Bureaucrat::Bureaucrat(Bureaucrat const &cpy) : _name(cpy._name), _grade(cpy._grade)
+{
+    
+}
+
+Bureaucrat & Bureaucrat::operator=(Bureaucrat const &rhs)
+{
+	if (this != &rhs)
+	{
+		this->_grade = rhs._grade;
+	}
+	return (*this);
+};
+
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 {
     if (grade < 1)

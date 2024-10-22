@@ -3,14 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: teddybandama <teddybandama@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 15:25:44 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/22 12:37:56 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/10/22 20:14:59 by teddybandam      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+
+Form::~Form()
+{
+    
+};
+
+Form::Form(Form const &cpy) :_name(cpy._name), _signed(cpy._signed), _gradeToExecute(cpy._gradeToExecute), _gradeToSign(cpy._gradeToSign)
+{
+   *this = cpy;
+};
+
+Form const & Form::operator=(const Form &rhs)
+{
+    if (this != &rhs)
+    {
+        this->_signed = rhs._signed;
+    }
+    return (*this);
+}
 
 Form::Form(std::string const name , const int gradeToExecute, const int gradeToSign) : _name(name), _gradeToExecute(gradeToExecute), _gradeToSign(gradeToSign)
 {

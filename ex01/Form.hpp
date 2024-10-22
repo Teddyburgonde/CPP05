@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: teddybandama <teddybandama@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 15:25:51 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/22 08:42:03 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/10/22 20:06:29 by teddybandam      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ class Bureaucrat;
 
 class Form
 {
+    public:
+        ~Form();
+        Form(Form const &cpy);
+        Form const & operator=(Form const &rhs);
+
     public:
         class GradeTooHighException : public std::exception
             {
