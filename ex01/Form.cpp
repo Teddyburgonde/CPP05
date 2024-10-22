@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 15:25:44 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/22 12:34:00 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/10/22 12:37:56 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ int Form::getGradeToSign() const
     return (_gradeToSign);
 }
 
-// gerer le cas si le formulaire est deja signer , ne pas refaire signer 
 void Form::beSigned(const Bureaucrat& bureaucrat)
 {
     if (_signed)
