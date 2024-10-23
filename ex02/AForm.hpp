@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 15:25:51 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/23 11:52:55 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/10/23 15:13:59 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ class AForm
         int getGradeToExecute() const;
         int getGradeToSign() const;
         void beSigned(const Bureaucrat & bureaucrat);
+        virtual void execute(Bureaucrat const & executor) const = 0;
 
     private:
         std::string const _name;
