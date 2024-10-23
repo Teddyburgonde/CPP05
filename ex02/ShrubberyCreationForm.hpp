@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:38:13 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/23 15:42:52 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/10/23 17:52:49 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "AForm.hpp"
 #include <iostream>
+#include <fstream>
 
 class ShrubberyCreationForm : public AForm
 {
