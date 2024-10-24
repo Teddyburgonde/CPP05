@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 11:12:44 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/24 11:13:03 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/10/24 11:39:37 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class PresidentialPardonForm : public AForm
 		PresidentialPardonForm(std::string const &target);
 		PresidentialPardonForm(PresidentialPardonForm const &cpy);
 		PresidentialPardonForm &operator=(PresidentialPardonForm const &rhs);
-		~PresidentialPardonForm();
+		virtual ~PresidentialPardonForm();
 	
 	private:
 		std::string _target;
