@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 15:38:13 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/24 11:09:41 by tebandam         ###   ########.fr       */
+/*   Created: 2024/10/24 11:12:44 by tebandam          #+#    #+#             */
+/*   Updated: 2024/10/24 11:13:03 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-# define SHRUBBERYCREATIONFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+# define PRESIDENTIALPARDONFORM_HPP
 
 #include "AForm.hpp"
 
-class ShrubberyCreationForm : public AForm
+class PresidentialPardonForm : public AForm
 {
 	public:
-		ShrubberyCreationForm();
-		ShrubberyCreationForm(std::string const &target);
-		ShrubberyCreationForm(ShrubberyCreationForm const &cpy);
-		ShrubberyCreationForm &operator=(ShrubberyCreationForm const &rhs);
-		virtual ~ShrubberyCreationForm();
-
-	public:
-		virtual void execute(Bureaucrat const & executor) const;
-
+		PresidentialPardonForm();
+		PresidentialPardonForm(std::string const &target);
+		PresidentialPardonForm(PresidentialPardonForm const &cpy);
+		PresidentialPardonForm &operator=(PresidentialPardonForm const &rhs);
+		~PresidentialPardonForm();
+	
 	private:
 		std::string _target;
 };
 
-#endif 
+#endif

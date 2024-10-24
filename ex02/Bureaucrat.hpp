@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:39:26 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/23 12:17:55 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/10/24 11:05:49 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <exception>
+#include <fstream>
 
 class Form;
 class AForm;

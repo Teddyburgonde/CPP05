@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 15:25:51 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/23 15:13:59 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/10/24 11:05:54 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define AFORM_HPP
 
 #include "Bureaucrat.hpp"
-#include <iostream>
 
 class Bureaucrat;
 
