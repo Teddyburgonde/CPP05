@@ -1,3 +1,11 @@
-creer la fonction Dans RobotomyRequestForm.cpp et dans presidential
+Verification :
+ex02 : 
+Bureaucrap.hpp ✅
+Bureaucrap.cpp ❌
 
-virtual void	execute(Bureaucrat const &executor) const;
+
+
+
+
+❌
+✅

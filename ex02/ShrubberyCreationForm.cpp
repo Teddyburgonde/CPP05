@@ -6,13 +6,13 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:38:17 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/23 17:52:11 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/10/26 16:42:05 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("Shruberry Creation", 145, 137), _target("default")
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("Shruberry Creation", 145, 137), _target("Default")
 {
 	
 }

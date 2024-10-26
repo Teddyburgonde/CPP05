@@ -12,9 +12,12 @@ CFLAGS = -Wall -Wextra -Werror -g -std=c++98
 
 #================== SOURCES =================#
 
-SRCS = Bureaucrat.cpp \
+SRCS =	Bureaucrat.cpp \
 		AForm.cpp \
-	   main.cpp
+		PresidentialPardonForm.cpp \
+		RobotomyRequestForm.cpp \
+		ShrubberyCreationForm.cpp \
+		main.cpp
 
 #============== OBJECT FILES ================#
 
