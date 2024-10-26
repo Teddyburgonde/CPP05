@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 11:03:53 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/26 17:07:50 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/10/26 17:32:10 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ PresidentialPardonForm::~PresidentialPardonForm()
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
 	(void)executor;
-	std::cout << "Our president forgives you and forgets all offenses." << std::endl;
+	std::cout << this->_target << "(Our president) forgives you and forgets all offenses." << std::endl;
 }
