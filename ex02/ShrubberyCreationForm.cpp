@@ -6,7 +6,7 @@
 /*   By: teddybandama <teddybandama@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:38:17 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/26 18:47:48 by teddybandam      ###   ########.fr       */
+/*   Updated: 2024/10/26 18:53:27 by teddybandam      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	if (this->getIsSigned() == false)
 	{
 		std::cerr << "Contract not signed " << std::endl;
+		return ;
 	}
 	else if (executor.getGrade() > this->getGradeToExecute())
 	{

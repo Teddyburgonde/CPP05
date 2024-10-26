@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: teddybandama <teddybandama@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:39:15 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/26 17:42:46 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/10/26 19:36:59 by teddybandam      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	main()
 		
 		try 
 		{
+			/*Execute the forms */
 			std::cout << henri << std::endl;
 			std::cout << john << std::endl;
 			std::cout << gaetan << std::endl;
@@ -50,6 +51,5 @@ int	main()
 		{
 			std::cout << e.what() << std::endl;
 		}
-		
 	}
 }
