@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 09:49:33 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/24 10:36:59 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/10/26 14:55:51 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,19 @@ RobotomyRequestForm::~RobotomyRequestForm()
 		
 }
 
-// virtual void	execute(Bureaucrat const &executor) const; 
+
+void	RobotomyRequestForm::beExecuted(const Bureaucrat &bureaucrat) const
+{
+	int	success; // boolean 
+
+	srand((unsigned) time(NULL)); // initialisation du generateur 
+	success = rand() % 2; // genere un nombre aleatoire entre 0 et 1 et le stock dans success
+	(void)bureaucrat; // ignore bureaucrat 
+	if (success) // l'operation est reussi
+		std::cout << this->_target << " has been robotomized successfully" << std::endl;
+	else // operation a echoue 
+		std::cout << this->_target << "'s robotomization failed" << std::endl;
+}
+
 
 

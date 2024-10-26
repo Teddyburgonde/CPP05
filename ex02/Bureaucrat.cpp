@@ -6,11 +6,14 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:38:34 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/22 19:04:45 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/10/26 15:19:24 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
+Bureaucrat::Bureaucrat(void): _name("default"), _grade(150) {}
+
 
 Bureaucrat::~Bureaucrat()
 {
