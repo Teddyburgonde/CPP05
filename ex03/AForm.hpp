@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 15:25:51 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/24 11:05:54 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/10/27 15:33:05 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ class Bureaucrat;
 class AForm
 {
     public:
+        AForm();
+        AForm(std::string const &name , const int gradeToExecute, const int gradeToSign);
         virtual ~AForm(); // destructeur en virtual
         AForm(AForm const &cpy);
         AForm const & operator=(AForm const &rhs);
@@ -37,21 +39,18 @@ class AForm
         };
 
     public:
-        AForm(std::string name, int gradeToExecute, int gradeToSign);
-
-    public:
         std::string const &getName() const;
         bool getIsSigned() const;
         int getGradeToExecute() const;
         int getGradeToSign() const;
         void beSigned(const Bureaucrat & bureaucrat);
         virtual void execute(Bureaucrat const & executor) const = 0;
-
+    // Initialise signed 
     private:
         std::string const _name;
-        bool _signed;
         const int _gradeToExecute;
         const int _gradeToSign;
+        bool _signed;
 
 };
 

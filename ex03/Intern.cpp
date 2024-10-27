@@ -6,25 +6,14 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 10:45:37 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/27 12:46:19 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/10/27 15:22:52 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
 #include "AForm.hpp"
 
-enum FormType {
-    ROBOTOMY_REQUEST,
-    SHRUBBERY_CREATION,
-    PRESIDENTIAL_PARDON,
-    UNKNOWN_FORM
-};
-
-
-Intern::Intern()
-{
-	
-};
+Intern::Intern() {};
 
 Intern::Intern(Intern const &cpy)
 {
@@ -37,29 +26,12 @@ Intern & Intern::operator=(Intern const &rhs)
 	return (*this);
 }
 
+Intern::~Intern() {};
 
-Intern::~Intern()
+AForm* Intern::makeForm(std::string const & nameForm, std::string const &target)
 {
-		
-};
-
-FormType getFormType(const std::string &nameForm) 
-{
-    if (nameForm == "robotomy request") 
-		return ROBOTOMY_REQUEST;
-    else if (nameForm == "shrubbery creation") 
-		return SHRUBBERY_CREATION;
-    else if (nameForm == "presidential pardon") 
-		return PRESIDENTIAL_PARDON;
-    else 
-		return UNKNOWN_FORM;
-}
-
-Form* Intern::makeForm(std::string const & nameForm, std::string const &target)
-{
-	Form* newForm;
-	newForm = Form::makeForm(nameForm, target);
-	if (!newForm)
+	AForm* newForm;;
+	FormType formType = strToFromType(nameForm);
 				
 	switch (formType) 
 	{
@@ -72,11 +44,26 @@ Form* Intern::makeForm(std::string const & nameForm, std::string const &target)
 		case PRESIDENTIAL_PARDON:
 			newForm = new PresidentialPardonForm(target);
 			break;
-		case UNKNOWN_FORM:
 		default:
-			std::cout << "The form does not exist." << std::endl;
-			return nullptr;
+			throw Intern::FormCreationException();
 	}
 	std::cout << "Intern creates " << nameForm << std::endl;
 	return newForm;
 };
+
+const char	*Intern::FormCreationException::what()	const throw()
+{
+	return ("This type of form isn't available.");
+}
+
+FormType strToFromType(const std::string &nameForm) 
+{
+    if (nameForm == "robotomy request") 
+		return ROBOTOMY_REQUEST;
+    else if (nameForm == "shrubbery creation") 
+		return SHRUBBERY_CREATION;
+    else if (nameForm == "presidential pardon") 
+		return PRESIDENTIAL_PARDON;
+    else 
+		return UNKNOWN_FORM;
+}

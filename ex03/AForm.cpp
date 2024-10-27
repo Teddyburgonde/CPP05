@@ -6,18 +6,20 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 15:25:44 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/23 11:52:28 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/10/27 15:33:42 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-AForm::~AForm()
+AForm::AForm() :_name("default"), _gradeToExecute(9), _gradeToSign(10), _signed(false)
 {
     
 };
 
-AForm::AForm(AForm const &cpy) :_name(cpy._name), _signed(cpy._signed), _gradeToExecute(cpy._gradeToExecute), _gradeToSign(cpy._gradeToSign)
+AForm::~AForm() {};
+
+AForm::AForm(AForm const &cpy) :_name(cpy._name), _gradeToExecute(cpy._gradeToExecute), _gradeToSign(cpy._gradeToSign), _signed(cpy._signed)
 {
    *this = cpy;
 };
@@ -31,7 +33,7 @@ AForm const & AForm::operator=(const AForm &rhs)
     return (*this);
 }
 
-AForm::AForm(std::string const name , const int gradeToExecute, const int gradeToSign) : _name(name), _gradeToExecute(gradeToExecute), _gradeToSign(gradeToSign)
+AForm::AForm(std::string const &name , const int gradeToExecute, const int gradeToSign) : _name(name), _gradeToExecute(gradeToExecute), _gradeToSign(gradeToSign), _signed(false)
 {
     if (gradeToSign < 1 || gradeToExecute < 1)
         throw GradeTooHighException();
