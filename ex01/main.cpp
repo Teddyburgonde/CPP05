@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:39:15 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/22 12:39:18 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/04 10:07:08 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main()
 	{
 		try 
 		{
-			Bureaucrat Matthieu("Matthieu", 50);
+			Bureaucrat Matthieu("Mathieu", 50);
 			std::cout << Matthieu << std::endl;
 			Form form("B126", 19, 20);
 			std::cout << form << std::endl;
@@ -52,7 +52,7 @@ int	main()
 		} 
 		catch (std::exception &e) 
 		{
-			std::cerr << "Matthieu cannot sign the form because " << e.what() << std::endl;
+			std::cerr << "Mathieu cannot sign the form because " << e.what() << std::endl;
 		}
 	}
 

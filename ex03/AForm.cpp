@@ -6,20 +6,18 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 15:25:44 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/27 15:33:42 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/04 10:47:11 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-AForm::AForm() :_name("default"), _gradeToExecute(9), _gradeToSign(10), _signed(false)
+AForm::~AForm()
 {
     
 };
 
-AForm::~AForm() {};
-
-AForm::AForm(AForm const &cpy) :_name(cpy._name), _gradeToExecute(cpy._gradeToExecute), _gradeToSign(cpy._gradeToSign), _signed(cpy._signed)
+AForm::AForm(AForm const &cpy) :_name(cpy._name), _signed(cpy._signed), _gradeToExecute(cpy._gradeToExecute), _gradeToSign(cpy._gradeToSign)
 {
    *this = cpy;
 };
@@ -33,7 +31,7 @@ AForm const & AForm::operator=(const AForm &rhs)
     return (*this);
 }
 
-AForm::AForm(std::string const &name , const int gradeToExecute, const int gradeToSign) : _name(name), _gradeToExecute(gradeToExecute), _gradeToSign(gradeToSign), _signed(false)
+AForm::AForm(std::string const name , const int gradeToExecute, const int gradeToSign) : _name(name), _gradeToExecute(gradeToExecute), _gradeToSign(gradeToSign)
 {
     if (gradeToSign < 1 || gradeToExecute < 1)
         throw GradeTooHighException();
@@ -63,16 +61,11 @@ int AForm::getGradeToSign() const
 void AForm::beSigned(const Bureaucrat& bureaucrat)
 {
     if (_signed)
-    {
-        std::cout << "Form " << _name << " is already signed." << std::endl;
-        return;
-    }
+        throw AlreadySigned();
     if (bureaucrat.getGrade() <= _gradeToSign)
         _signed = true;
     else
-    {
         throw GradeTooLowException();
-    }
 }
 
 const char* AForm::GradeTooHighException::what() const throw()
@@ -82,6 +75,16 @@ const char* AForm::GradeTooHighException::what() const throw()
 const char* AForm::GradeTooLowException::what() const throw()
 {
 	return ("Grade is too low");
+}
+
+const char *AForm::AlreadySigned::what() const throw()
+{
+    return ("Form is already signed.");
+}
+
+const char *AForm::NotSigned::what() const throw()
+{
+    return ("Form isn't signed.");
 }
 
 std::ostream & operator<<(std::ostream &os, const AForm &aform)

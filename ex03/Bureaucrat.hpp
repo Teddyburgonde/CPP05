@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:39:26 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/26 17:10:45 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/04 09:33:05 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Form;
 class AForm;
 class Bureaucrat
 {
-	public: /* Canonical form */
+	public:
 		Bureaucrat();
 		Bureaucrat(std::string const &name, int grade);
 		Bureaucrat(Bureaucrat const &cpy);
@@ -29,16 +29,16 @@ class Bureaucrat
 		~Bureaucrat();
     
 	
-	public: /*Getters */
+	public:
         std::string const &getName() const;
         int getGrade() const;
 
-	public: /* Methodes */
+	public:
 		void	gradeUp(void);
 		void	signForm(AForm &aform);
 		void	executeForm(AForm const & aform);
 
-	public: /* Exceptiions */
+	public:
 		class GradeTooHighException : public std::exception
 		{
 			public:
@@ -50,7 +50,7 @@ class Bureaucrat
 				virtual const char* what() const throw();
 		};
 
-	private: /* Variables */
+	private:
     	std::string   _name;
     	int _grade;
 };

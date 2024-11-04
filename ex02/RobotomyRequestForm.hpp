@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 18:38:21 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/26 16:43:15 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/04 10:37:50 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class RobotomyRequestForm : public AForm
 		RobotomyRequestForm(RobotomyRequestForm const &cpy);
 		RobotomyRequestForm &operator=(RobotomyRequestForm const &rhs);
 	public:
-		virtual void	execute(Bureaucrat const &executor) const;
+		void	execute(Bureaucrat const &executor) const;
 	private: 
 		std::string _target;
 };

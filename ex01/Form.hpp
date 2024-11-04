@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teddybandama <teddybandama@student.42.f    +#+  +:+       +#+        */
+/*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 15:25:51 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/22 20:06:29 by teddybandam      ###   ########.fr       */
+/*   Updated: 2024/11/04 10:02:36 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,22 @@ class Form
         Form(Form const &cpy);
         Form const & operator=(Form const &rhs);
 
-    public:
+    private:
         class GradeTooHighException : public std::exception
-            {
-                public:
-                    virtual const char* what() const throw();
-            };
-            class GradeTooLowException : public std::exception
-            {
-                public:
-                    virtual const char* what() const throw();
-            };
+        {
+            public:
+                const char* what() const throw();
+        };
+        class GradeTooLowException : public std::exception
+        {
+            public:
+                const char* what() const throw();
+        };
+        class AlreadySigned : public std::exception
+        {
+            public:
+                const char* what() const throw();
+        };
     public:
         Form(std::string name, int gradeToExecute, int gradeToSign);
 

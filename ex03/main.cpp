@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:39:15 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/27 15:20:34 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/04 11:05:31 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main()
     Bureaucrat Mathieu("Mathieu", 5);
     AForm* rrf;
 
-    // Robotomy Request
+    /* Robotomy Request */
     std::cout << " - New form" << std::endl;
 
     {
@@ -35,7 +35,7 @@ int	main()
 
     std::cout << " - New form" << std::endl;
     
-    // Shruberry Creation
+    /* Shruberry Creation */
     {
         rrf = someRandomIntern.makeForm("shrubbery creation", "Home");
         Mathieu.signForm(*rrf);
@@ -46,7 +46,7 @@ int	main()
     
     std::cout << " - New form" << std::endl;
     
-    // Presidential Pardon
+    /* Presidential Pardon */
     {
         rrf = someRandomIntern.makeForm("presidential pardon", "Manu");
         Mathieu.signForm(*rrf);
@@ -57,11 +57,13 @@ int	main()
     
     std::cout << " - New form" << std::endl;
     
-    // Salary Increase (Error)
+    /* Salary Increase (Error) */
     {
-        try {
+        try 
+        {
             rrf = someRandomIntern.makeForm("Salary increase", "Intern");
-        } catch (std::exception &e) {
+        } catch (std::exception &e) 
+        {
             std::cerr << e.what() << std::endl;
         }    
     }

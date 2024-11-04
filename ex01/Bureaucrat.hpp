@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:39:26 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/22 19:07:01 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/04 09:55:01 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,24 @@ class Bureaucrat
         int getGrade() const;
 		void	signForm(Form &form);
 	
-	public:
+	private:
 		class GradeTooHighException : public std::exception
 		{
 			public:
-				virtual const char* what() const throw();
+				const char* what() const throw();
 		};
 		class GradeTooLowException : public std::exception
 		{
 			public:
-				virtual const char* what() const throw();
+				const char* what() const throw();
 		};
 
 	private:
     	std::string const   _name;
     	int _grade;
+
+	private:
+		Bureaucrat();
 	
 };
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teddybandama <teddybandama@student.42.f    +#+  +:+       +#+        */
+/*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 15:25:44 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/22 20:14:59 by teddybandam      ###   ########.fr       */
+/*   Updated: 2024/11/04 10:06:12 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,16 +61,11 @@ int Form::getGradeToSign() const
 void Form::beSigned(const Bureaucrat& bureaucrat)
 {
     if (_signed)
-    {
-        std::cout << "Form " << _name << " is already signed." << std::endl;
-        return;
-    }
+        throw AlreadySigned();
     if (bureaucrat.getGrade() <= _gradeToSign)
         _signed = true;
     else
-    {
         throw GradeTooLowException();
-    }
 }
 
 const char* Form::GradeTooHighException::what() const throw()
@@ -80,6 +75,11 @@ const char* Form::GradeTooHighException::what() const throw()
 const char* Form::GradeTooLowException::what() const throw()
 {
 	return ("Grade is too low");
+}
+
+const char *Form::AlreadySigned::what() const throw()
+{
+    return ("Form is already signed.");
 }
 
 std::ostream & operator<<(std::ostream &os, const Form &form)

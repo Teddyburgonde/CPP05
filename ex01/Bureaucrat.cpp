@@ -6,16 +6,17 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:38:34 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/22 19:04:45 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/04 09:56:53 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::~Bureaucrat()
-{
-    
-};
+
+Bureaucrat::Bureaucrat(){}
+
+Bureaucrat::~Bureaucrat(){}
+
 Bureaucrat::Bureaucrat(Bureaucrat const &cpy) : _name(cpy._name), _grade(cpy._grade)
 {
     
@@ -24,9 +25,7 @@ Bureaucrat::Bureaucrat(Bureaucrat const &cpy) : _name(cpy._name), _grade(cpy._gr
 Bureaucrat & Bureaucrat::operator=(Bureaucrat const &rhs)
 {
 	if (this != &rhs)
-	{
 		this->_grade = rhs._grade;
-	}
 	return (*this);
 };
 
@@ -51,7 +50,8 @@ void	Bureaucrat::signForm(Form &form)
     {
         form.beSigned(*this);
         std::cout << this->_name << " signs " << form.getName() << std::endl;
-    } catch (std::exception &e) 
+    } 
+    catch (std::exception &e) 
     {
         std::cout << this->_name << " cannot sign " << form.getName() << " because: " << e.what() << std::endl;
     }

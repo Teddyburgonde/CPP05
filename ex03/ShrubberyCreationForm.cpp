@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teddybandama <teddybandama@student.42.f    +#+  +:+       +#+        */
+/*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:38:17 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/26 18:53:27 by teddybandam      ###   ########.fr       */
+/*   Updated: 2024/11/04 10:48:41 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &cpy) :
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rhs)
 {
 	if (this != &rhs)
-	{
 		this->_target = rhs._target;
-	}
 	return (*this);
 }
 
@@ -46,8 +44,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	if (this->getIsSigned() == false)
 	{
-		std::cerr << "Contract not signed " << std::endl;
-		return ;
+		throw NotSigned();
 	}
 	else if (executor.getGrade() > this->getGradeToExecute())
 	{

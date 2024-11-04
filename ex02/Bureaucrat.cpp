@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:38:34 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/26 17:13:24 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/04 10:12:35 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ void	Bureaucrat::executeForm(AForm const &aform)
 	try
 	{
 		aform.execute(*this);
+        std::cout << this->_name << " execute " << aform.getName() << std::endl;
 	}
 	catch (std::exception &e)
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teddybandama <teddybandama@student.42.f    +#+  +:+       +#+        */
+/*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:39:15 by tebandam          #+#    #+#             */
-/*   Updated: 2024/10/26 19:36:59 by teddybandam      ###   ########.fr       */
+/*   Updated: 2024/11/04 10:53:45 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,21 @@ int	main()
 			std::cout << e.what() << std::endl;
 		}
 	}
+	
+	/*Form not signe */
+	{
+		Bureaucrat matheo("Matheo", 1);
+		ShrubberyCreationForm shrubbery("Home");
+		matheo.executeForm(shrubbery);
+	}
+	
+	/*Form signed */
+	{
+		Bureaucrat matheo("Matheo", 1);
+		ShrubberyCreationForm shrubbery("Home");
+		matheo.signForm(shrubbery);
+		matheo.executeForm(shrubbery);
+	}
+
+	// bureaucrat not grade pour executer mais il a le grade pour le signer 
 }
