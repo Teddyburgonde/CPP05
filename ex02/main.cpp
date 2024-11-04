@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:39:15 by tebandam          #+#    #+#             */
-/*   Updated: 2024/11/04 10:53:45 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/04 11:57:39 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main()
 	{
 		Bureaucrat henri("Henri", 1);
 		Bureaucrat john("John", 150);
-		Bureaucrat gaetan("Gaetan", 150);
+		Bureaucrat gaetan("Gaetan", 1);
 		
 		ShrubberyCreationForm shrubbery("Home");
 		RobotomyRequestForm robotomy("Robot");
@@ -45,6 +45,7 @@ int	main()
 			henri.signForm(shrubbery);
 			henri.executeForm(shrubbery);
 			john.executeForm(robotomy);
+			gaetan.signForm(pardon);
 			gaetan.executeForm(pardon);
 		} 
 		catch (std::exception &e) 
@@ -67,6 +68,4 @@ int	main()
 		matheo.signForm(shrubbery);
 		matheo.executeForm(shrubbery);
 	}
-
-	// bureaucrat not grade pour executer mais il a le grade pour le signer 
 }

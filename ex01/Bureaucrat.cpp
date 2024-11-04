@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:38:34 by tebandam          #+#    #+#             */
-/*   Updated: 2024/11/04 09:56:53 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/04 11:39:57 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ Bureaucrat & Bureaucrat::operator=(Bureaucrat const &rhs)
 		this->_grade = rhs._grade;
 	return (*this);
 };
-
-
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 {
