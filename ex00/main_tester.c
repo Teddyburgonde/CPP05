@@ -1,4 +1,30 @@
+/*
+Dans ton hpp met l'exception en public , uniquement pour le test 
+
+
+public:
+		class GradeTooHighException : public std::exception
+		{
+			public:
+				const char* what() const throw();
+		};
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				const char* what() const throw();
+		};
+
+
+
+*/
+
+
+
 #include "Bureaucrat.hpp"
+
+
+
+
 #include <iostream>
 #include <cassert>
 
